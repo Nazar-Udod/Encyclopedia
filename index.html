@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nazar Udod">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        a {
+            color: blue! important;
+        }
+        a:visited {
+            color: orange;
+        }
+        a:active {
+            color: violet;
+        }
+    </style>
     <title>Головна сторінка</title>
 </head>
-<body link="yellow" vlink="orange" alink="blue" bgcolor="beige"><font face="Times New Roman" size="4" align="justify">
-    <h1>Ласкаво просимо!</h1>
-    <P> 
+<body>
+    <h1 id="welcoming">Ласкаво просимо!</h1>
+    <P style="text-indent: 50px"> 
         Ласкаво просимо до нашої інтернет-енциклопедії, вашого вірного джерела знань та 
         інформації! Ми присвячені наданню точної та корисної інформації з різних галузей 
         для задоволення вашої цікавості та підвищення вашого рівня знань.
@@ -24,21 +36,19 @@
         відповіді на свої запитання та розширите свої знання. Приєднуйтесь до нашої спільноти знань, 
         де кожен може поділитися своєю експертизою та навчитися від інших.
     </p>
-    <p>
-        <font color="blue">
-            Довіртеся нам у своєму пізнанні світу, та дозвольте інтернет-енциклопедії бути вашим провідником 
-            у світі знань та досліджень!
-        </font>
+    <p class="blue-allocation">
+        Довіртеся нам у своєму пізнанні світу, та дозвольте інтернет-енциклопедії бути вашим провідником 
+        у світі знань та досліджень!
     </p>
     <p>
         Натхнення взято з 
         <a href="https://en.wikipedia.org/wiki/Main_Page">Вікіпедії</a>
     </p>
     <h2>Нові статті</h2>
-    <ul type="circle">
-        <li><a href="ukraine.html">Україна</a></li>
-        <li><a href="kyiv.html">Київ</a></li>
-        <li><a href="taras-shevchenko.html">Тарас Шевченко</a></li>
+    <ul>
+        <li><a href="ukraine.html" class="contents-link">Україна</a></li>
+        <li><a href="kyiv.html" class="contents-link">Київ</a></li>
+        <li><a href="taras-shevchenko.html" class="contents-link">Тарас Шевченко</a></li>
     </ul>
-</font></body>
+</body>
 </html>

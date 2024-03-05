@@ -1,0 +1,71 @@
+#welcoming {
+    font: italic 2em/2em Arial;
+    color: blue;
+    text-align: center;
+}
+body {
+    font: normal 1em/1em Arial;
+    color: black;
+    text-align: justify;
+    background-color: beige;
+}
+.contents-link {
+    font: normal 1.5em/1em Arial;
+    color: violet;
+    text-align: justify;
+}
+.blue-allocation {
+    color: blue;
+}
+.cursive-text {
+    font-style: italic;
+}
+ul {
+    margin: 10px;
+    list-style-type: circle;
+}
+ol {
+    font: italic 1.5em/1.5em Arial;
+    list-style-type: upper-roman;
+}
+dl {
+    border: 3px solid black;
+    padding: 5px;
+    background-color: aquamarine;
+}
+table {
+    border: 3px solid black;
+}
+th, td {
+    border: 3px solid black;
+}
+.spaced-table {
+    border-spacing: 3px;
+}
+.spaced-table th, .spaced-table td {
+    padding: 5px;
+}
+.red-column {
+    background-color: red;
+}
+.green-column {
+    background-color: green;
+}
+.yellow-column {
+    background-color: yellow;
+}
+.center-aligned {
+    text-align: center;
+}
+.right-aligned {
+    text-align: right;
+}
+.simple-table {
+    border-collapse: collapse;
+}
+.simple-table thead {
+    background-color: yellow;
+}
+.simple-table th, .simple-table td {
+    width: 400px;
+}
