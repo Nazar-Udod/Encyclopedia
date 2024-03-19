@@ -54,8 +54,14 @@ th, td {
 .yellow-column {
     background-color: yellow;
 }
-.center-aligned {
-    text-align: center;
+td > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+table > caption {
+    margin: 10px;
+    font: italic 1em/1em Arial;
 }
 .right-aligned {
     text-align: right;
@@ -68,4 +74,7 @@ th, td {
 }
 .simple-table th, .simple-table td {
     width: 400px;
+}
+li + li {
+    margin-top: 5px;
 }
