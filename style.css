@@ -10,7 +10,7 @@ body {
     background-color: beige;
 }
 .contents-link {
-    font: normal 1.5em/1em Arial;
+    font: normal 1.25em/1em Arial;
     color: violet;
     text-align: justify;
 }
@@ -77,4 +77,39 @@ table > caption {
 }
 li + li {
     margin-top: 5px;
+}
+.side {
+    float: right;
+    margin: 10px;
+}
+.emphasized {
+    font: bold italic 1em/1em "Times New Roman";
+}
+.good-article {
+    position: relative;
+    left: 50px;
+    width: 100px;
+    padding: 20px;
+    background-color: grey;
+    color: yellow;
+    text-align: center;
+}
+.good-article span:first-child {
+    font-size: 75px;
+    line-height: 90px;
+}
+a:hover {
+    font-size: 1.5em;
+}
+.regions-list {
+    list-style-type: none;
+}
+.regions-list li:before {
+    content: "+ ";
+}
+.regions-list li:after {
+    content: ";";
+}
+.regions-list li:last-child:after {
+    content: "";
 }
