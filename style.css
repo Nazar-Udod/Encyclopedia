@@ -81,6 +81,8 @@ li + li {
 .side {
     float: right;
     margin: 10px;
+    padding: 5px;
+    border: 2px solid black;
 }
 .emphasized {
     font: bold italic 1em/1em "Times New Roman";
