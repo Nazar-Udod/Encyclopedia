@@ -113,3 +113,13 @@ a:hover {
 .regions-list li:last-child:after {
     content: "";
 }
+.side > a > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.side > iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
