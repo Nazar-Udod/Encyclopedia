@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nazar Udod">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script-index.js"></script>
     <style>
         a:link {
             color: blue;
@@ -20,35 +21,70 @@
 </head>
 <body>
     <h1 id="welcoming">Ласкаво просимо!</h1>
-    <P style="text-indent: 50px"> 
-        Ласкаво просимо до нашої інтернет-енциклопедії, вашого вірного джерела знань та 
-        інформації! Ми присвячені наданню <span class="emphasized">точної та корисної інформації 
-        з різних галузей</span> для задоволення вашої цікавості та підвищення вашого рівня знань.
-    </P>
-    <p>
-        Наша енциклопедія охоплює широкий спектр тем, включаючи науку, технології, історію, 
-        мистецтво, культуру та багато інших аспектів життя. Ми надаємо інформацію науково 
-        обґрунтовану та оновлюємо її регулярно, щоб ви завжди були в курсі останніх відкриттів 
-        та подій.
-    </p>
-    <p>
-        Завдяки нашому зручному інтерфейсу та великій кількості розділів, ви з легкістю знайдете 
-        відповіді на свої запитання та розширите свої знання. Приєднуйтесь до нашої спільноти знань, 
-        де кожен може поділитися своєю експертизою та навчитися від інших.
-    </p>
-    <p class="blue-allocation">
-        Довіртеся нам у своєму пізнанні світу, та дозвольте інтернет-енциклопедії бути вашим провідником 
-        у світі знань та досліджень!
-    </p>
-    <p>
-        Натхнення взято з 
-        <a href="https://en.wikipedia.org/wiki/Main_Page">Вікіпедії</a>
-    </p>
+    <div class="side">
+        <div class="user-dialog">
+            <p>Вам подобається наш сайт?</p>
+            <form id="like-or-not">
+                <label>
+                    <input type="radio" name="like-or-not" value="yes" checked>
+                    Так
+                </label>
+                <label>
+                    <input type="radio" name="like-or-not" value="no">
+                    Ні
+                </label>
+            </form>
+            <button id="confirm-button">Ок</button>
+        </div>
+        <div class="string-comparison">
+            <p>Введіть два рядки для порівняння</p><br>
+            <input type="text" id="string-1"><input type="text" id="string-2"><br>
+            <button>Порівняти</button>
+        </div>
+        <div>
+            <button id="change-color">Змінити колір сторінки</button>
+        </div>
+    </div>
+    <button id="remove-formatting">Прибрати форматування</button>
+    <div id="removable-formatting">
+        <P style="text-indent: 50px"> 
+            Ласкаво просимо до нашої інтернет-енциклопедії, вашого вірного джерела знань та 
+            інформації! Ми присвячені наданню <span class="emphasized">точної та корисної інформації 
+            з різних галузей</span> для задоволення вашої цікавості та підвищення вашого рівня знань.<br>
+            <span class="blue-allocation" id="dev-info">Почитати про розробника </span>
+        </P>
+        <p>
+            Наша енциклопедія охоплює широкий спектр тем, включаючи науку, технології, історію, 
+            мистецтво, культуру та багато інших аспектів життя. Ми надаємо інформацію науково 
+            обґрунтовану та оновлюємо її регулярно, щоб ви завжди були в курсі останніх відкриттів 
+            та подій.
+        </p>
+        <p>
+            Завдяки нашому зручному інтерфейсу та великій кількості розділів, ви з легкістю знайдете 
+            відповіді на свої запитання та розширите свої знання. Приєднуйтесь до нашої спільноти знань, 
+            де кожен може поділитися своєю експертизою та навчитися від інших.
+        </p>
+        <p class="blue-allocation">
+            Довіртеся нам у своєму пізнанні світу, та дозвольте інтернет-енциклопедії бути вашим провідником 
+            у світі знань та досліджень!
+        </p>
+        <p>
+            Натхнення взято з 
+            <a href="https://en.wikipedia.org/wiki/Main_Page">Вікіпедії</a>
+        </p>
+    </div>
     <h2>Нові статті</h2>
     <ul>
         <li><a href="ukraine.html" class="contents-link">Україна</a></li>
         <li><a href="kyiv.html" class="contents-link">Київ</a></li>
         <li><a href="taras-shevchenko.html" class="contents-link">Тарас Шевченко</a></li>
     </ul>
+    <script>
+        alert("Вітаємо!");
+        interestingPage = confirm("Бажаєте переглянути цікаву сторінку?");
+        if (interestingPage) {
+            location.assign("ukraine.html");
+        }
+    </script>
 </body>
 </html>

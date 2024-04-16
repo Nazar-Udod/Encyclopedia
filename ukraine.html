@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nazar Udod">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script-ukraine.js"></script>
     <title>Україна</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <span>!</span><br>
         <span>Гарна стаття</span>
     </div>
-    <div class="side">
+    <div class="side-info">
         <a href="images/ukraine-flag.png" target="_blank"><img src="images/ukraine-flag.png" alt="Прапор України" height="90px" width="135px"></a><br>
         <iframe src="images/ukraine-map.jpg" height="300px" width="400px"></iframe>
         <table class="spaced-table">
@@ -57,7 +58,7 @@
         та національні парки роблять Україну місцем, де природа поєднується з історією та культурою.
     </p>
     <h2>Зміст</h2>
-    <ol>
+    <ol class="contents">
         <li><a href="#capital">Столиця</a></li>
         <li><a href="#admin-division">Адміністративно-територільне діленння</a></li>
         <li><a href="#history">Історія</a></li>
@@ -168,8 +169,8 @@
     <h2 id="terms">Деякі терміни пов'язані з Україною</h2>
     <dl>
         <dt>Гетьманщина</dt>
-        <dd>
-            Період української історії в XVII-XVIII століттях, коли Україна була під польським владарюванням, а 
+        <dd id="changable-definition">
+            <button id="alt-definition">Алтернативне визначення</button>Період української історії в XVII-XVIII століттях, коли Україна була під польським владарюванням, а 
             гетьмани обиралися українським народом і виконували адміністративні та військові обов'язки.
         </dd>
         <dt>Шевченкознавство</dt>
@@ -220,5 +221,11 @@
             </tr>
         </tbody>
     </table>
+    <script>
+        let fontSize = prompt("Введіть розмір шрифту для змісту:", "21");
+        if (!isNaN(fontSize) && fontSize != null) {
+            document.querySelectorAll(".contents > li").forEach((element) => element.style.fontSize = `${+fontSize}px`);
+        }
+    </script>
 </body>
 </html>
