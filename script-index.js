@@ -14,11 +14,14 @@ addEventListener("DOMContentLoaded", () => {
 });
 
 function userDialog() {
-    document.getElementById("confirm-button").addEventListener("click", () => {
-        let likeOrNot = document.querySelector("input[name='like-or-not']:checked").value;
+    document.getElementById("confirm-button").addEventListener("click", dialogStart);
+}
+function dialogStart() {
+    let likeOrNot = document.querySelector("input[name='like-or-not']:checked").value;
         if (likeOrNot == "yes") {
             document.querySelector(".user-dialog > p").innerHTML = "Дякуємо!";
             document.getElementById("like-or-not").remove();
+            document.getElementById("confirm-button").remove();
         }
         else {
             document.querySelector(".user-dialog > p").innerHTML = "Введіть кількість зауважень, які ви маєте:";
@@ -29,30 +32,33 @@ function userDialog() {
             numberOfRemarksField.id = "number-of-remarks-field";
             numberOfRemarksForm.append(numberOfRemarksField);
             document.getElementById("like-or-not").replaceWith(numberOfRemarksForm);
-            document.getElementById("confirm-button").addEventListener("click", () => {
-                let numberOfRemarks = document.getElementById("number-of-remarks-field").value;
-                if (isNaN(numberOfRemarks)) {
-                    document.querySelector(".user-dialog > p").innerHTML = "Невірні дані, повторіть!";
-                }
-                else {
-                    document.querySelector(".user-dialog > p").innerHTML = `Введіть зауваження`;
-                    let remarksForm = document.createElement("form");
-                    remarksForm.id = "remarks-form";
-                    for (let i = 1; i <= numberOfRemarks; i++) {
-                        let remarkField = document.createElement("input");
-                        remarkField.type = "text";
-                        remarksForm.prepend(remarkField);
-                    }
-                    document.getElementById("number-of-remarks-form").replaceWith(remarksForm);
-                    document.getElementById("confirm-button").addEventListener("click", () => {
-                        document.querySelector(".user-dialog > p").innerHTML = "Дякуємо за відгук!";
-                        document.getElementById("remarks-form").remove();
-                        document.getElementById("confirm-button").outerHTML = "";
-                    })
-                }
-            })
+            document.getElementById("confirm-button").removeEventListener("click", dialogStart);
+            document.getElementById("confirm-button").addEventListener("click", createFields);
         }
-    })
+}
+function createFields() {
+    let numberOfRemarks = document.getElementById("number-of-remarks-field").value;
+    if (isNaN(numberOfRemarks)) {
+        document.querySelector(".user-dialog > p").innerHTML = "Невірні дані, повторіть!";
+    }
+    else {
+        document.querySelector(".user-dialog > p").innerHTML = "Введіть зауваження";
+        let remarksForm = document.createElement("form");
+        remarksForm.id = "remarks-form";
+        for (let i = 1; i <= numberOfRemarks; i++) {
+            let remarkField = document.createElement("input");
+            remarkField.type = "text";
+            remarksForm.prepend(remarkField);
+        }
+        document.getElementById("number-of-remarks-form").replaceWith(remarksForm);
+        document.getElementById("confirm-button").removeEventListener("click", createFields);
+        document.getElementById("confirm-button").addEventListener("click", reviewGratitude);
+    }
+}
+function reviewGratitude() {
+    document.querySelector(".user-dialog > p").innerHTML = "Дякуємо за відгук!";
+    document.getElementById("remarks-form").remove();
+    document.getElementById("confirm-button").outerHTML = "";
 }
 
 function getDeveloperInfo(surname, name, post="Студент гр. ІС-22") {
@@ -62,7 +68,7 @@ function getDeveloperInfo(surname, name, post="Студент гр. ІС-22") {
 
 function stringComparison(string1, string2) {
     let largerString;
-    largerString = string1 > string2 ? string1 : string2;
+    largerString = string1.toString() > string2.toString() ? string1 : string2;
     alert(`Більший рядок: ${largerString}`);
 }
 
