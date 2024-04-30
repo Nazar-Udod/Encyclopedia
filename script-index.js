@@ -1,12 +1,9 @@
 addEventListener("DOMContentLoaded", () => {
     userDialog();
-    document.getElementById("dev-info").addEventListener("click", () => {
-        getDeveloperInfo("Удод", "Назар");
-    });
+    document.getElementById("change-color").onclick = changeColor;
     document.querySelector(".string-comparison > button").addEventListener("click", () => {
         stringComparison(document.getElementById("string-1").value, document.getElementById("string-2").value);
     });
-    document.getElementById("change-color").addEventListener("click", changeColor);
     document.getElementById("remove-formatting").addEventListener("click", () => {
         let rawText = document.getElementById("removable-formatting").textContent;
         document.getElementById("removable-formatting").innerHTML = rawText;

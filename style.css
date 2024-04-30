@@ -131,7 +131,7 @@ a:hover {
 .side > div {
     border: 3px solid black;
     margin: 10px;
-    width: 300px;
+    min-width: 300px;
     text-align: center;
 }
 button {
@@ -139,4 +139,8 @@ button {
 }
 #dev-info {
     cursor: pointer;
+}
+.simple-table {
+    margin-left: auto;
+    margin-right: auto;
 }
