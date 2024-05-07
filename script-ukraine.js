@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".good-article").addEventListener("click", eventHandler);
     document.querySelector('.regions-list').addEventListener("click", (event) => {
         let target = event.target;
-        if (target.tagName = "li") {
+        if (target.tagName == "li") {
             target.style.color = "red";
             target.style.fontSize = "1.5em";
         }
