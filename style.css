@@ -144,3 +144,7 @@ button {
     margin-left: auto;
     margin-right: auto;
 }
+#collage-maker {
+    height: 1000px;
+    width: 100%;
+}
